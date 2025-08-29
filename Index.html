@@ -1,102 +1,53 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Collection of Harshil</title>
-  <meta name="description" content="Collection of Harshil — daily photo collection." />
+  <meta name="description" content="Collection of Harshil — daily photo collection.">
   <style>
-    /* ---------- Basic reset & layout ---------- */
     :root{
-      --bg:#fafafa; --card:#ffffff; --muted:#6b7280; --accent:#0ea5a4;
-      --glass: rgba(255,255,255,0.6);
+      --bg:#fafafa; --card:#fff; --muted:#6b7280; --accent:#0ea5a4;
     }
     *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
-      background: linear-gradient(180deg,var(--bg),#f3f4f6);
-      color:#111827; -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.4;
-    }
-
-    header{
-      padding:32px 20px; display:flex; align-items:center; justify-content:space-between;
-      gap:16px; max-width:1100px; margin:0 auto;
-    }
-    .brand{
-      display:flex; gap:14px; align-items:center;
-    }
-    .logo{
-      width:64px; height:64px; border-radius:10px; display:flex; align-items:center;
-      justify-content:center; font-weight:700; font-size:20px; background:linear-gradient(135deg,#06b6d4,#7c3aed);
-      color:white; box-shadow:0 6px 18px rgba(12,74,110,0.12);
-    }
-    h1{margin:0; font-size:20px}
-    .tagline{color:var(--muted); font-size:13px}
-
-    nav .social{display:flex; gap:10px; align-items:center}
-    a.btn{background:transparent; border:1px solid rgba(0,0,0,0.06); padding:8px 12px; border-radius:8px; text-decoration:none; color:inherit; font-size:13px}
-    a.ig{display:inline-flex; gap:8px; align-items:center; padding:7px 12px; background:linear-gradient(90deg,#f97316,#ef4444); color:white; border:none}
-
-    main{max-width:1100px; margin:18px auto; padding:0 20px 80px}
-    .hero{
-      display:flex; gap:20px; align-items:center; justify-content:space-between;
-      background:var(--card); padding:18px; border-radius:12px; box-shadow:0 6px 18px rgba(2,6,23,0.06);
-    }
+    body{margin:0;font-family:system-ui,sans-serif;background:var(--bg);color:#111827;}
+    header{padding:20px;display:flex;justify-content:space-between;align-items:center;max-width:1100px;margin:0 auto;}
+    .brand{display:flex;gap:14px;align-items:center;}
+    .logo{width:50px;height:50px;border-radius:10px;background:linear-gradient(135deg,#06b6d4,#7c3aed);color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:20px;}
+    h1{margin:0;font-size:20px}
+    .tagline{color:var(--muted);font-size:13px}
+    nav .social{display:flex;gap:10px;align-items:center}
+    a.btn{padding:7px 12px;border-radius:8px;text-decoration:none;color:inherit;font-size:13px;border:1px solid rgba(0,0,0,0.06);}
+    a.ig{display:inline-flex;gap:8px;align-items:center;padding:7px 12px;background:linear-gradient(90deg,#f97316,#ef4444);color:white;border:none;}
+    main{max-width:1100px;margin:18px auto;padding:0 20px 80px}
+    .hero{display:flex;gap:20px;align-items:center;justify-content:space-between;background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.06);}
     .hero-left{max-width:60%}
-    .hero p{margin:10px 0 0; color:var(--muted)}
-    .upload-box{display:flex; gap:12px; align-items:center; margin-top:12px}
+    .hero p{margin:10px 0 0;color:var(--muted)}
+    .upload-box{display:flex;gap:12px;align-items:center;margin-top:12px}
     .upload-box input[type=file]{display:none}
-    .upload-label{cursor:pointer; border:1px dashed rgba(0,0,0,0.08); padding:10px 12px; border-radius:8px; background:linear-gradient(180deg,#fff, #fbfbfb); font-size:13px}
-
-    /* grid gallery */
-    .gallery{margin-top:18px; display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:14px}
-    .card{background:var(--card); border-radius:12px; overflow:hidden; position:relative; box-shadow:0 8px 20px rgba(2,6,23,0.06)}
-    .card img{width:100%; display:block; height:220px; object-fit:cover}
-    .meta{padding:10px; display:flex; gap:8px; align-items:center; justify-content:space-between}
-    .meta .left{display:flex; gap:10px; align-items:center}
-    .meta .title{font-weight:600; font-size:14px}
-    .meta .muted{font-size:12px; color:var(--muted)}
-
-    /* like & comment buttons */
-    .actions{display:flex; gap:8px; align-items:center}
-    .like-btn, .comment-btn{display:inline-flex; gap:8px; align-items:center; padding:7px 9px; border-radius:8px; border:1px solid rgba(0,0,0,0.06); background:transparent; cursor:pointer; font-size:13px}
+    .upload-label{cursor:pointer;border:1px dashed rgba(0,0,0,0.08);padding:10px 12px;border-radius:8px;background:linear-gradient(180deg,#fff,#fbfbfb);font-size:13px}
+    .gallery{margin-top:18px;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+    .card{background:var(--card);border-radius:12px;overflow:hidden;position:relative;box-shadow:0 8px 20px rgba(2,6,23,0.06);}
+    .card img{width:100%;display:block;height:220px;object-fit:cover}
+    .meta{padding:10px;display:flex;gap:8px;align-items:center;justify-content:space-between}
+    .meta .left{display:flex;gap:10px;align-items:center}
+    .meta .title{font-weight:600;font-size:14px}
+    .meta .muted{font-size:12px;color:var(--muted)}
+    .actions{display:flex;gap:8px;align-items:center}
+    .like-btn, .comment-btn{display:inline-flex;gap:8px;align-items:center;padding:7px 9px;border-radius:8px;border:1px solid rgba(0,0,0,0.06);background:transparent;cursor:pointer;font-size:13px}
     .like-count{font-weight:700}
-
-    /* comment area */
-    .comments{padding:10px 12px; border-top:1px dashed rgba(0,0,0,0.04); background:linear-gradient(180deg, rgba(255,255,255,0.6), transparent)}
-    .comment{padding:8px 6px; border-radius:8px; background:rgba(15,23,42,0.02); margin-bottom:8px; font-size:13px}
-    .comment small{color:var(--muted); display:block; font-size:11px; margin-top:4px}
-
-    /* review form */
-    .review{margin-top:20px; padding:14px; border-radius:12px; background:linear-gradient(180deg,#fff,#fcfcfc); box-shadow:0 6px 18px rgba(2,6,23,0.04)}
-    .review textarea{width:100%; min-height:80px; border-radius:8px; padding:10px; border:1px solid rgba(0,0,0,0.06)}
-    .row{display:flex; gap:10px}
+    .comments{padding:10px 12px;border-top:1px dashed rgba(0,0,0,0.04);background:linear-gradient(180deg, rgba(255,255,255,0.6), transparent)}
+    .comment{padding:8px 6px;border-radius:8px;background:rgba(15,23,42,0.02);margin-bottom:8px;font-size:13px}
+    .comment small{color:var(--muted);display:block;font-size:11px;margin-top:4px}
+    .review{margin-top:20px;padding:14px;border-radius:12px;background:linear-gradient(180deg,#fff,#fcfcfc);box-shadow:0 6px 18px rgba(2,6,23,0.04)}
+    .review textarea{width:100%;min-height:80px;border-radius:8px;padding:10px;border:1px solid rgba(0,0,0,0.06)}
+    .row{display:flex;gap:10px}
     .muted-small{font-size:12px;color:var(--muted)}
-
-    footer{max-width:1100px; margin:28px auto; padding:18px 20px; color:var(--muted); font-size:13px;}
-
-    /* responsive */
-    @media (max-width:720px){
-      .hero{flex-direction:column; align-items:flex-start}
-      .hero-left{max-width:100%}
-      .brand h1{font-size:16px}
-    }
+    footer{max-width:1100px;margin:28px auto;padding:18px 20px;color:var(--muted);font-size:13px;}
+    @media (max-width:720px){.hero{flex-direction:column;align-items:flex-start}.hero-left{max-width:100%}.brand h1{font-size:16px}}
   </style>
 </head>
 <body>
-  <!--
-    Collection of Harshil
-    Single-file static site
-    NOTES:
-      - Replace INSTAGRAM_LINK below with your real profile URL.
-      - The built-in "likes" and "comments" are stored locally in each visitor's browser (localStorage).
-      - To enable PUBLIC comments & likes across visitors, see the instructions at the bottom of this file (Disqus, Firebase, Supabase).
-      - To host for free: use GitHub Pages or Netlify (instructions below).
-  -->
-
   <header>
     <div class="brand">
       <div class="logo">CH</div>
@@ -105,338 +56,148 @@
         <div class="tagline">Capturing moments, one click at a time.</div>
       </div>
     </div>
-
     <nav>
       <div class="social">
-        <!-- Replace the # in href with your Instagram profile (e.g. https://instagram.com/yourhandle) -->
-        <a class="ig" id="igLink" href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a class="ig" id="igLink" href="https://www.instagram.com/harshil.solanki9411?igsh=MTdtbW1xNTExNDJhcA%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer">Instagram</a>
         <a class="btn" href="#gallery">Gallery</a>
         <a class="btn" href="#contact">Contact</a>
       </div>
     </nav>
   </header>
-
   <main>
-    <section class="hero" aria-labelledby="welcome">
+    <section class="hero">
       <div class="hero-left">
-        <h2 id="welcome">Welcome — Collection of Harshil</h2>
-        <p>Daily photos, curated by you. Upload local images to preview, get likes and comments from visitors (stored locally). When you're ready to go public-wide, follow the hosting & comments instructions below.</p>
-
+        <h2>Welcome — Collection of Harshil</h2>
+        <p>Daily photos, curated by you. Upload images below to share with all visitors.</p>
         <div class="upload-box">
-          <label class="upload-label" for="fileInput">Add photos (PNG/JPG) — preview only</label>
+          <label class="upload-label" for="fileInput">Add photos</label>
           <input type="file" id="fileInput" accept="image/*" multiple />
-          <div class="muted-small">Tip: Upload images to GitHub or your hosting later for permanent publication.</div>
         </div>
       </div>
-
-      <div style="text-align:right;min-width:200px">
-        <div style="font-weight:700">Public preview</div>
-        <div class="muted-small">Likes & comments are saved in your browser only.<br>To enable public interactions, see instructions at end.</div>
+    </section>
+    <section id="gallery" class="gallery"></section>
+    <section class="review" id="contact">
+      <h3>Visitor Reviews</h3>
+      <input id="reviewName" placeholder="Your name" style="padding:8px; border-radius:8px; border:1px solid rgba(0,0,0,0.06); width:100%; margin-bottom:8px" />
+      <textarea id="reviewText" placeholder="Write a short review..."></textarea>
+      <div style="display:flex;gap:8px;margin-top:8px;align-items:center">
+        <button id="saveReview" class="btn">Submit Review</button>
       </div>
+      <div id="reviewsList" style="margin-top:12px"></div>
     </section>
-
-    <section id="gallery" class="gallery" aria-label="Photo gallery">
-      <!-- Cards will be injected here -->
-    </section>
-
-    <section class="review" id="contact" aria-labelledby="reviewTitle">
-      <h3 id="reviewTitle">Visitor review & contact</h3>
-      <p class="muted-small">Leave a public-style review (stored locally). To receive real messages, connect a service like Formspree or Netlify Forms (instructions below).</p>
-      <div style="margin-top:10px">
-        <input id="reviewName" placeholder="Your name" style="padding:8px; border-radius:8px; border:1px solid rgba(0,0,0,0.06); width:100%; margin-bottom:8px" />
-        <textarea id="reviewText" placeholder="Write a short review or message..."></textarea>
-        <div style="display:flex; gap:8px; margin-top:8px; align-items:center">
-          <button id="saveReview" class="btn">Save review</button>
-          <button id="clearLocal" class="btn" title="Clear local demo data">Clear demo data</button>
-        </div>
-        <div id="reviewsList" style="margin-top:12px"></div>
-      </div>
-    </section>
-
     <footer>
-      <div>© <strong>Collection of Harshil</strong> — built as a static demo. Edit the HTML to update your Instagram link and tagline. Host on GitHub Pages for free.</div>
+      © Collection of Harshil — built with Supabase integration.
     </footer>
   </main>
 
+  <!-- Supabase SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/supabase.min.js"></script>
   <script>
-    /*******************************************************
-     * Configuration - edit these values to personalize
-     *******************************************************/
-    const CONFIG = {
-      instagramUrl: "https://www.instagram.com/harshil.solanki9411?igsh=MTdtbW1xNTExNDJhcA%3D%3D&utm_source=qr" // <-- Replace this with your Instagram URL, e.g. "https://instagram.com/harshil_photography"
-      defaultImages: [
-        // Unsplash placeholder images (hotlink). Replace with your hosted images when ready.
-        {id:'u1', title:'Sunset silhouette', src:'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=bd4c23c8b0f1d2227be53a5f0a47c6ec'},
-        {id:'u2', title:'City lights', src:'https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=ef6eb0e3b0a7b5620bf7f0ea4970133f'},
-        {id:'u3', title:'Mountain stream', src:'https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=79b48b5b345de0b6adafa3d77d8a4b7c'},
-        {id:'u4', title:'Architecture', src:'https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=6d5e197a5c6a7b5f38cbd31d218a8b18'},
-        {id:'u5', title:'Forest path', src:'https://images.unsplash.com/photo-1470770903676-69b98201ea1c?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=2a3f4123a7f56bf3d2c9b7a6c9016d38'},
-        {id:'u6', title:'Street portrait', src:'https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=ef6eb0e3b0a7b5620bf7f0ea4970133f'}
-      ]
-    };
+    const supabaseUrl = "https://kemjggajatytsuqdgrxi.supabase.co";
+    const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtlbWpnZ2FqYXR5dHN1cWRncnhpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY0OTAxMDYsImV4cCI6MjA3MjA2NjEwNn0.v-5AuFAC9Ag4Xb7_9yESQw5onLh_TneLmZKDdRmOL9U";
+    const supabase = supabase.createClient(supabaseUrl, supabaseKey);
 
-    // set instagram link
-    document.getElementById('igLink').href = CONFIG.instagramUrl;
-
-    /*******************************************************
-     * Simple local-storage "database" for demo likes/comments
-     *******************************************************/
-    const LS_PREFIX = 'coh_'; // collection-of-harshil keys
-
-    function lsGet(key, fallback){
-      const v = localStorage.getItem(LS_PREFIX + key);
-      return v ? JSON.parse(v) : fallback;
-    }
-    function lsSet(key,val){
-      localStorage.setItem(LS_PREFIX + key, JSON.stringify(val));
-    }
-    function lsRemove(key){
-      localStorage.removeItem(LS_PREFIX + key);
-    }
-
-    /*******************************************************
-     * Build the gallery (starts with defaultImages)
-     *******************************************************/
     const galleryEl = document.querySelector('.gallery');
 
-    // get persisted images (from uploads) or start with defaultImages
-    let images = lsGet('images', CONFIG.defaultImages.slice());
-
-    function saveImages(){ lsSet('images', images); }
-
-    function renderGallery(){
+    async function loadGallery() {
+      const { data: photos, error } = await supabase.from('photos').select('*').order('created_at',{ascending:false});
+      if(error){ console.error(error); return; }
       galleryEl.innerHTML = '';
-      images.forEach(img => {
-        const card = document.createElement('article');
+      for(const photo of photos){
+        const card = document.createElement('div');
         card.className = 'card';
-        card.dataset.id = img.id;
-
-        // image
-        const imgEl = document.createElement('img');
-        imgEl.src = img.src;
-        imgEl.alt = img.title || 'Photo';
-
-        // meta
-        const meta = document.createElement('div');
-        meta.className = 'meta';
-        meta.innerHTML = `
-          <div class="left">
-            <div>
-              <div class="title">${escapeHTML(img.title || 'Untitled')}</div>
-              <div class="muted">${new Date(img.addedAt || Date.now()).toLocaleString()}</div>
+        card.innerHTML = `
+          <img src="${photo.url}" alt="${photo.title}" />
+          <div class="meta">
+            <div class="left">
+              <div class="title">${photo.title || 'Untitled'}</div>
+              <div class="muted">${new Date(photo.created_at).toLocaleString()}</div>
+            </div>
+            <div class="actions">
+              <button class="like-btn" data-id="${photo.id}">❤ <span class="like-count">${photo.likes_count}</span></button>
+              <button class="comment-btn" data-id="${photo.id}">Comments</button>
             </div>
           </div>
+          <div class="comments" data-for="${photo.id}"></div>
         `;
-
-        const actionsDiv = document.createElement('div');
-        actionsDiv.className = 'actions';
-
-        // like button
-        const likeBtn = document.createElement('button');
-        likeBtn.className = 'like-btn';
-        likeBtn.innerHTML = `<span>❤</span> <span class="like-count">${getLikeCount(img.id)}</span>`;
-        likeBtn.onclick = () => { toggleLike(img.id); likeBtn.querySelector('.like-count').textContent = getLikeCount(img.id); };
-
-        // comment button
-        const commentBtn = document.createElement('button');
-        commentBtn.className = 'comment-btn';
-        commentBtn.textContent = 'Comments';
-        commentBtn.onclick = () => { showComments(img.id); };
-
-        actionsDiv.appendChild(likeBtn);
-        actionsDiv.appendChild(commentBtn);
-
-        meta.appendChild(actionsDiv);
-
-        // comments container
-        const commentsContainer = document.createElement('div');
-        commentsContainer.className = 'comments';
-        commentsContainer.dataset.for = img.id;
-
-        card.appendChild(imgEl);
-        card.appendChild(meta);
-        card.appendChild(commentsContainer);
-
         galleryEl.appendChild(card);
+      }
+      attachLikeCommentHandlers();
+      loadAllComments();
+    }
 
-        renderCommentsFor(img.id);
+    async function attachLikeCommentHandlers(){
+      document.querySelectorAll('.like-btn').forEach(btn=>{
+        btn.onclick = async ()=>{
+          const photoId = btn.dataset.id;
+          const { data, error } = await supabase.rpc('increment_like', { photo_id: photoId });
+          if(error){ console.error(error); return; }
+          btn.querySelector('.like-count').textContent = data[0].likes_count;
+        };
+      });
+      document.querySelectorAll('.comment-btn').forEach(btn=>{
+        btn.onclick = async ()=>{
+          const photoId = btn.dataset.id;
+          document.querySelector(`.comments[data-for="${photoId}"]`).scrollIntoView({behavior:'smooth',block:'center'});
+        };
       });
     }
 
-    // HTML-escape helper
-    function escapeHTML(s){ return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
-
-    /*******************************************************
-     * Likes: stored per-image in localStorage
-     *******************************************************/
-    function getLikeCount(id){
-      const counts = lsGet('likes', {});
-      return counts[id] || 0;
-    }
-    function toggleLike(id){
-      const counts = lsGet('likes', {});
-      counts[id] = (counts[id] || 0) + 1;
-      lsSet('likes', counts);
-      // simple pulse animation (optional)
+    async function loadAllComments(){
+      const { data: comments, error } = await supabase.from('comments').select('*').order('created_at',{ascending:false});
+      if(error){ console.error(error); return; }
+      comments.forEach(c=>{
+        const container = document.querySelector(`.comments[data-for="${c.photo_id}"]`);
+        if(container){
+          const div = document.createElement('div');
+          div.className='comment';
+          div.innerHTML=`<strong>${c.name}</strong><div>${c.text}</div><small>${new Date(c.created_at).toLocaleString()}</small>`;
+          container.appendChild(div);
+        }
+      });
     }
 
-    /*******************************************************
-     * Comments stored per-image in localStorage
-     *******************************************************/
-    function getComments(id){
-      const all = lsGet('comments', {});
-      return all[id] || [];
-    }
-    function addComment(id, name, text){
-      const all = lsGet('comments', {});
-      all[id] = all[id] || [];
-      all[id].push({name: name || 'Anonymous', text: text, time: Date.now()});
-      lsSet('comments', all);
-    }
-
-    function renderCommentsFor(id){
-      const container = document.querySelector('.comments[data-for="'+id+'"]');
-      if(!container) return;
-      container.innerHTML = ''; // header: list existing comments, then add a small form
-      const comments = getComments(id);
-      if(comments.length === 0){
-        const el = document.createElement('div');
-        el.className = 'muted-small';
-        el.textContent = 'No comments yet — be first!';
-        container.appendChild(el);
-      } else {
-        comments.slice().reverse().forEach(c => {
-          const block = document.createElement('div');
-          block.className = 'comment';
-          block.innerHTML = `<strong>${escapeHTML(c.name)}</strong><div>${escapeHTML(c.text)}</div><small>${new Date(c.time).toLocaleString()}</small>`;
-          container.appendChild(block);
-        });
-      }
-      // add form
-      const formWrap = document.createElement('div');
-      formWrap.style.marginTop = '8px';
-      formWrap.innerHTML = `
-        <input placeholder="Your name" class="comment-name" style="padding:6px;border-radius:6px;border:1px solid rgba(0,0,0,0.06);width:100%;margin-bottom:6px" />
-        <input placeholder="Write a short comment..." class="comment-text" style="padding:8px;border-radius:6px;border:1px solid rgba(0,0,0,0.06);width:100%;margin-bottom:6px" />
-        <div style="display:flex;gap:8px">
-          <button class="btn save-comment">Add comment</button>
-        </div>
-      `;
-      container.appendChild(formWrap);
-
-      formWrap.querySelector('.save-comment').onclick = () => {
-        const name = formWrap.querySelector('.comment-name').value.trim() || 'Anonymous';
-        const text = formWrap.querySelector('.comment-text').value.trim();
-        if(!text){ alert('Type a comment first.'); return; }
-        addComment(id, name, text);
-        renderCommentsFor(id);
-      };
-    }
-
-    function showComments(id){
-      // scroll to comments
-      const container = document.querySelector('.comments[data-for="'+id+'"]');
-      if(container){
-        container.scrollIntoView({behavior:'smooth', block:'center'});
-      }
-    }
-
-    /*******************************************************
-     * Image upload (preview) — stores images as dataURLs in localStorage
-     *******************************************************/
+    // Upload photos
     const fileInput = document.getElementById('fileInput');
-    fileInput.addEventListener('change', async (ev) => {
-      const files = Array.from(ev.target.files || []);
-      for(const f of files){
-        if(!f.type.startsWith('image/')) continue;
-        const dataUrl = await fileToDataURL(f);
-        const id = 'u' + Date.now() + Math.random().toString(36).slice(2,7);
-        images.unshift({id:id, title: f.name, src: dataUrl, addedAt: Date.now()});
+    fileInput.addEventListener('change', async e=>{
+      const files = Array.from(e.target.files);
+      for(const file of files){
+        const fileName = Date.now() + '_' + file.name;
+        const { data, error } = await supabase.storage.from('photos').upload(fileName,file,{upsert:true});
+        if(error){ console.error(error); continue; }
+        const { publicUrl } = supabase.storage.from('photos').getPublicUrl(fileName);
+        await supabase.from('photos').insert([{ title:file.name, url:publicUrl }]);
       }
-      saveImages();
-      renderGallery();
-      // reset file input so same file can be re-uploaded later if needed
-      fileInput.value = '';
+      loadGallery();
+      fileInput.value='';
     });
-    function fileToDataURL(file){
-      return new Promise((res,rej) => {
-        const r = new FileReader();
-        r.onload = () => res(r.result);
-        r.onerror = rej;
-        r.readAsDataURL(file);
+
+    // Submit reviews
+    document.getElementById('saveReview').onclick = async ()=>{
+      const name = document.getElementById('reviewName').value || 'Anonymous';
+      const text = document.getElementById('reviewText').value;
+      if(!text){ alert('Type a review first'); return; }
+      await supabase.from('reviews').insert([{name,text}]);
+      document.getElementById('reviewName').value='';
+      document.getElementById('reviewText').value='';
+      loadReviews();
+    }
+
+    async function loadReviews(){
+      const { data: reviews, error } = await supabase.from('reviews').select('*').order('created_at',{ascending:false});
+      if(error){ console.error(error); return; }
+      const container = document.getElementById('reviewsList');
+      container.innerHTML='';
+      reviews.forEach(r=>{
+        const div = document.createElement('div');
+        div.className='comment';
+        div.innerHTML=`<strong>${r.name}</strong><div>${r.text}</div><small>${new Date(r.created_at).toLocaleString()}</small>`;
+        container.appendChild(div);
       });
     }
 
-    /*******************************************************
-     * Review/save local demo data
-     *******************************************************/
-    document.getElementById('saveReview').addEventListener('click', () => {
-      const name = document.getElementById('reviewName').value.trim() || 'Anonymous';
-      const text = document.getElementById('reviewText').value.trim();
-      if(!text){ alert('Write a short review first.'); return; }
-      const reviews = lsGet('reviews', []);
-      reviews.unshift({name, text, time: Date.now()});
-      lsSet('reviews', reviews);
-      renderReviews();
-      document.getElementById('reviewText').value = '';
-      document.getElementById('reviewName').value = '';
-    });
-
-    function renderReviews(){
-      const list = document.getElementById('reviewsList');
-      const reviews = lsGet('reviews', []);
-      if(reviews.length === 0){ list.innerHTML = '<div class="muted-small">No reviews yet.</div>'; return; }
-      list.innerHTML = '';
-      reviews.forEach(r => {
-        const el = document.createElement('div');
-        el.className = 'comment';
-        el.innerHTML = `<strong>${escapeHTML(r.name)}</strong><div>${escapeHTML(r.text)}</div><small>${new Date(r.time).toLocaleString()}</small>`;
-        list.appendChild(el);
-      });
-    }
-
-    document.getElementById('clearLocal').addEventListener('click', () => {
-      if(!confirm('Clear demo data saved in this browser (images, likes, comments, reviews)?')) return;
-      // only clear our keys
-      Object.keys(localStorage).forEach(k => {
-        if(k.startsWith(LS_PREFIX)) localStorage.removeItem(k);
-      });
-      // reset images to defaults
-      images = CONFIG.defaultImages.slice();
-      saveImages();
-      renderGallery();
-      renderReviews();
-      alert('Local demo data cleared.');
-    });
-
-    /*******************************************************
-     * Initial render
-     *******************************************************/
-    renderGallery();
-    renderReviews();
-
-    /*******************************************************
-     * Helpful instructions for next steps (not required)
-     * When you're ready for public hosting and global comments/likes,
-     * choose one:
-     *
-     * 1) Host on GitHub Pages (FREE):
-     *    - Create a GitHub repo (e.g., collection-of-harshil), add this index.html file
-     *    - In repo settings > Pages, set main branch / root -> site will be published at yourusername.github.io/repo
-     *
-     * 2) Host on Netlify (FREE):
-     *    - Drag & drop index.html in Netlify Drop or connect repo for continuous deploy
-     *
-     * 3) To enable PUBLIC comments/likes (shared across visitors), consider:
-     *    - Disqus (easy): create a Disqus shortname, paste Disqus embed code where comments go
-     *    - Firebase / Supabase: add a small backend to store images, likes, comments. Supabase has a generous free tier.
-     *    - Staticman: for GitHub-backed comments via pull requests (more technical)
-     *
-     * 4) Contact form that actually sends you an email:
-     *    - Use Formspree (replace form action), or Netlify Forms if hosting on Netlify.
-     *
-     * Replace your Instagram link at the top of the file (CONFIG.instagramUrl).
-     *******************************************************/
+    loadGallery();
+    loadReviews();
   </script>
 </body>
 </html>
